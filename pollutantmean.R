@@ -1,7 +1,7 @@
 pollutantmean <- function(directory, pollutant,ID=1:332){
-    dat<-data.frame()
-    ct<-0
-    dsum<-0
+# finding mean by getting number of vallues and sum of values
+    ct<-0  # to hold count of values
+    dsum<-0  # to hold sum of values
     flist<-list.files(directory)
     for(i in ID){
         tvec<- read.csv(paste(directory,"/",flist[i],sep=""))
@@ -9,5 +9,5 @@ pollutantmean <- function(directory, pollutant,ID=1:332){
         dsum<-dsum + sum(tvec[,pollutant],na.rm = TRUE)
         
     }
-    dsum/ct
+    dsum/ct  #this is the mean
 }
